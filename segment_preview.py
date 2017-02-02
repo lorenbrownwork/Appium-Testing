@@ -14,7 +14,7 @@ PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
 )
 
-class SimpleAndroidTests(unittest.TestCase):
+class SegmentPreviewTests(unittest.TestCase):
     #runs before every test
     def setUp(self):
         desired_caps = {}
@@ -94,5 +94,5 @@ class SimpleAndroidTests(unittest.TestCase):
         self.assert_text_on_screen('My Segments - Bus 0')
 
 if __name__ == '__main__':
-    suite = unittest.TestLoader().loadTestsFromTestCase(SimpleAndroidTests)
+    suite = unittest.TestLoader().loadTestsFromTestCase(SegmentPreviewTests)
     unittest.TextTestRunner(verbosity=2).run(suite)
