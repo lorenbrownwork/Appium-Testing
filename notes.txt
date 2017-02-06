@@ -1,0 +1,8 @@
+Tests I don't know how to implement:
+    - testing the refresh button
+    - testing the GPS
+    - testing the z-pass
+
+To do:
+    - pull out hard coded stuff like test data names
+    -

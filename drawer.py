@@ -43,6 +43,14 @@ class DrawerTests(unittest.TestCase):
     def swipe_left(self):
         self.driver.swipe(start_x=500, start_y=300, end_x=5, end_y=300, duration=800)
 
+    def assert_drawer_open(self):
+        # Check our location (Open Drawer)
+        self.assert_text_on_screen('My Segments')
+        self.assert_text_on_screen('Segment Details')
+        self.assert_text_on_screen('Alerts')
+        self.assert_text_on_screen('Riders')
+        self.assert_text_on_screen('Logout')
+
     def test_drawer_hamburger_button_from_segment_view(self):
         # Wait for app to launch
         sleep(STARTUP_SLEEP)
@@ -56,19 +64,7 @@ class DrawerTests(unittest.TestCase):
         sleep(XML_SLEEP)
 
         # Check our location (Open Drawer)
-        self.assert_text_on_screen('My Segments')
-
-        # Check our location (Open Drawer)
-        self.assert_text_on_screen('Segment Details')
-
-        # Check our location (Open Drawer)
-        self.assert_text_on_screen('Alerts')
-
-        # Check our location (Open Drawer)
-        self.assert_text_on_screen('Riders')
-
-        # Check our location (Open Drawer)
-        self.assert_text_on_screen('Logout')
+        self.assert_drawer_open()
 
         # Find and click the 'Back' button on the toolbar
         el = self.driver.find_element_by_name('RiderVerification')
@@ -92,19 +88,7 @@ class DrawerTests(unittest.TestCase):
         sleep(XML_SLEEP)
 
         # Check our location (Open Drawer)
-        self.assert_text_on_screen('My Segments')
-
-        # Check our location (Open Drawer)
-        self.assert_text_on_screen('Segment Details')
-
-        # Check our location (Open Drawer)
-        self.assert_text_on_screen('Alerts')
-
-        # Check our location (Open Drawer)
-        self.assert_text_on_screen('Riders')
-
-        # Check our location (Open Drawer)
-        self.assert_text_on_screen('Logout')
+        self.assert_drawer_open()
 
         # Close Drawer (Swipe)
         self.swipe_left()
